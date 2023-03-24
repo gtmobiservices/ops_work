@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the name of the service
-SERVICE_NAME="trackingapp-backend"
+SERVICE_NAME=$APP_NAME
 
 # Create the YAML file header
 echo "apiVersion: v1" > service.yaml
@@ -9,10 +9,10 @@ echo "kind: Service" >> service.yaml
 echo "metadata:" >> service.yaml
 echo "  name: $SERVICE_NAME" >> service.yaml
 echo "  labels:" >> service.yaml
-echo "    app: trackingapp-backend" >> service.yaml
+echo "    app: $SERVICE_NAME" >> service.yaml
 echo "spec:" >> service.yaml
 echo "  selector:" >> service.yaml
-echo "    app: trackingapp-backend" >> service.yaml
+echo "    app: $SERVICE_NAME" >> service.yaml
 echo "  type: NodePort" >> service.yaml
 echo "  ports:" >> service.yaml
 # Read the port rules from the file and add them to the YAML file
